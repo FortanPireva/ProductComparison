@@ -1,0 +1,123 @@
+[
+  {
+    "BaseHost": "neptunks",
+    "Host": "http://www.neptun-ks.com",
+    "Title": "//h1[@class='product-details-second-col__title ng-binding']",
+    "Description": "//div[@class='productCharacteristics']/span[@class='ng-binding']",
+    "Price": "//span[2]/span[@class='product-price__amount--value ng-binding']",
+    "PCode": "",
+    "Active": true,
+    "RenderClientSide":true,
+    "Authority": "neptun-ks.com"
+  },
+  {
+    "BaseHost": "gjirafa50",
+    "Host": "http://gjirafa50.com",
+    "Title": "//h1[@class='ty-product-block-title']",
+    "Description": "//*[@id='content_features']/div[1]/div[1]",
+    "Price": "//span[@class='price_inner--amount']",
+    "PCode": "//*[@id='tygh_main_container']/div[4]/div/div[2]/div/div[2]/div[1]/div[2]/div[2]/div[1]/div",
+    "Active": true,
+    "Authority": "gjirafa50.com"
+  },
+  {
+    "BaseHost": "aztechonline",
+    "Host": "http://aztechonline.com",
+    "Title": "//h2[@class='col-lg-12 fs28 text-uppercase']",
+    "Description": "//div[@class='col-md-12 no-padding']",
+    "Price": "//div[@class='col-12 fs16 price text-center my-4']/div[@class='product-price']/span",
+    "PCode": "//tbody/tr[19]/td[@class='fw4 fs16 py-3 px-5']",
+    "Authority": "aztechonline.com"
+  },
+  {
+    "BaseHost": "e-baa",
+    "Host": "http://e-baa.com",
+    "Title": "//div[@class='detailsebaa']/h2",
+    "Description": "//div[@class='product-other']/ul[@class='ebaaother']/li[5]",
+    "Price": "//div[@class='detailsebaa']/h3",
+    "PCode": "",
+    "Authority": "e-baa.com"
+  },
+  {
+    "BaseHost": "butonks",
+    "Host": "http://butonks.com",
+    "Title": "//*[@id='px-429']/div/div/div[1]/div[1]/div[2]/form/div[1]/h1",
+    "Description": "//div[@class='brand']/div[@class='ty-features-list']",
+    "Price": "//*[@id='sec_list_price_822']",
+    "PCode": "//span[@id='line_discounted_price_823']/bdi/span[@id='sec_discounted_price_823']",
+    "Authority": "butonks.com"
+  },
+  {
+    "BaseHost": "smardonline",
+    "Host": "http://smardonline.com",
+    "Title": "//div[@class='primary_block row']//h1",
+    "Description": "//div[@id='short_description_content']/p",
+    "Price": "//span[@id='our_price_display']",
+    "PCode": "Product code",
+    "Active": true,
+    "Authority": "smardonline.com"
+  },
+
+  {
+    "BaseHost": "itmarketks",
+    "Host": "http://itmarket-ks.com",
+    "Title": "//div[@class='produkti_title']",
+    "Description": "//div[@class='produkti_pershkrimi_2']",
+    "Price": "//i[@class='cmimi_shifra']",
+    "PCode": "Part No:",
+    "Active": true,
+    "Authority": "itmarket-ks.com"
+  },
+  {
+    "BaseHost": "albusonline",
+    "Host": "http://albusonline.com",
+    "Title": "//h1[@class='product-name']",
+    "Description": "",
+    "Price": "//span[@class='price price-gross']",
+    "PCode": "Shifra e produktit",
+    "Active": true,
+    "Authority": "albusonline.com"
+  },
+  {
+    "BaseHost": "kosovashop",
+    "Host": "http://kosovashop.com/",
+    "Title": "//h5[@class='name name_product_style_title']",
+    "Description": "//div[@id='tab-description']/p",
+    "Price": "//span[@class='new_price']",
+    "PCode": "Disponueshmeria",
+    "Active": true,
+    "Authority": "albusonline.com"
+  },
+  {
+    "BaseHost": "blej24",
+    "Host": "http://www.blej24.com/",
+    "Title": "//div[@class='title-product']/h1",
+    "Description": "//div[@class='product-box-desc']",
+    "Price": "//span[@id='price-old']",
+    "PCode": "Kodi i produktit:",
+    "Active": true,
+    "Authority": "blej24.com"
+  },
+  {
+    "BaseHost": "comtradeks",
+    "Host": "http://www.comtrade-ks.com/",
+    "Title": "//h2[@class='product-title']",
+    "Description": "",
+    "Price": "//h2[@class='price-tag']/span",
+    "PCode": "xxx",
+    "Active": false,
+    "Authority": "comtrade-ks.com"
+  },
+  {
+    "BaseHost": "citycomputerks",
+    "Host": "http://citycomputer-ks.com/",
+    "Title": "//h1[@class='product_title entry-title']",
+    "Description": "//div[@id='content_tab_1']",
+    "Price": "//span[@class='woocommerce-Price-amount amount']",
+    "PCode": "xxx",
+    "Active": false,
+    "Authority": "citycomputer-ks.com"
+  }
+]
+
+
