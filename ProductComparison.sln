@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain", "Domain\Domain.csp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp", "ConsoleApp\ConsoleApp.csproj", "{51C736FC-77D2-48A9-81AC-5066450583D7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "URL", "Url\URL.csproj", "{7E4D3AEF-3B37-4E7D-BBF1-BC7211E03A92}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{51C736FC-77D2-48A9-81AC-5066450583D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{51C736FC-77D2-48A9-81AC-5066450583D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{51C736FC-77D2-48A9-81AC-5066450583D7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7E4D3AEF-3B37-4E7D-BBF1-BC7211E03A92}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7E4D3AEF-3B37-4E7D-BBF1-BC7211E03A92}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7E4D3AEF-3B37-4E7D-BBF1-BC7211E03A92}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7E4D3AEF-3B37-4E7D-BBF1-BC7211E03A92}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

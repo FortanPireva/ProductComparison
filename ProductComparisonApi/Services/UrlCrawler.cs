@@ -65,6 +65,7 @@ namespace ProductComparisonApi.Services
                 string Description = "";
                 if (!configuration.Description.Equals(""))
                         Description= CheckIfNullOrDefault(htmlDoc.DocumentNode.SelectSingleNode(configuration.Description));
+                Description = Description.Replace("\n", " ");
                 string PriceStr = CheckIfNullOrDefault(htmlDoc.DocumentNode.SelectSingleNode(configuration.Price),
                     defaultString: "0.0");
                 double Price;

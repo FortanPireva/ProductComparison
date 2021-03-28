@@ -12,12 +12,12 @@ namespace URL.UrlService
 {
     public class UrlService
     {
-        public List <Url> ReadCSVFile(string location) {
+        public List <T> ReadCSVFile<T,T1>(string location) where  T1 : ClassMap<T>{
             try {
                 using(var reader = new StreamReader(location, Encoding.Default))
                 using(var csv = new CsvReader(reader,CultureInfo.InvariantCulture)) {
-                    csv.Context.RegisterClassMap<UrlMap>();
-                    var records = csv.GetRecords<Url>().ToList();
+                    csv.Context.RegisterClassMap<T1>();
+                    var records = csv.GetRecords<T>().ToList();
                     Console.WriteLine("Read from file "+location);
                     return records;
                 }
@@ -26,8 +26,8 @@ namespace URL.UrlService
                 var file = File.Create(location);
                 using(var reader = new StreamReader(file, Encoding.Default))
                 using(var csv = new CsvReader(reader,CultureInfo.InvariantCulture)) {
-                    csv.Context.RegisterClassMap<UrlMap>();
-                    var records = csv.GetRecords<Url>().ToList();
+                    csv.Context.RegisterClassMap<ClassMap<T>>();
+                    var records = csv.GetRecords<T>().ToList();
                     Console.WriteLine("Created file "+location);
 
                     Console.WriteLine("Read from file "+location);
@@ -36,13 +36,25 @@ namespace URL.UrlService
                 }
             }
         }
-        public void WriteCSVFile(string path, List <Url> Links) {
-            using(StreamWriter sw = new StreamWriter(path, false, new UTF8Encoding(true)))
+        public void WriteCSVFile<T>(string path, List<T> objects)
+        {
+            FileStream file = null;
+            if (!File.Exists(path))
+            {
+                file =File.Create(path);
+            }
+            else
+            {
+
+                file = File.Open(path,FileMode.Create);
+            }
+            
+            using(StreamWriter sw = new StreamWriter(file))
             using(CsvWriter cw = new CsvWriter(sw, CultureInfo.InvariantCulture)) {
-                cw.WriteHeader<Url>();
+                cw.WriteHeader<T>();
                 cw.NextRecord();
-                foreach(Url url in Links) {
-                    cw.WriteRecord(url);
+                foreach(T obj in objects) {
+                    cw.WriteRecord(obj);
                     cw.NextRecord();
                 }
                 

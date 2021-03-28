@@ -11,6 +11,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Serialization;
 using ProductComparisonApi.Extensions;
 
 namespace ProductComparisonApi
@@ -30,7 +32,12 @@ namespace ProductComparisonApi
             services.AddEcommerceJsonConfiguration();
                 
 
-            services.AddControllers().AddNewtonsoftJson();
+            services.AddControllers().AddNewtonsoftJson(options =>
+            {
+                options.SerializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver();
+                options.SerializerSettings.DefaultValueHandling = DefaultValueHandling.Include;
+                options.SerializerSettings.NullValueHandling = NullValueHandling.Ignore;
+            });
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "ProductComparisonApi", Version = "v1" });

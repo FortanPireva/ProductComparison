@@ -16,7 +16,7 @@ namespace ProductComparisonApi.Extensions
         {
             var jsonString =
                 File.ReadAllText(
-                    @"C:\Users\forti\source\repos\ProductComparison\ProductComparisonApi\Utilities\ecommerce-xpaths.json");
+                    @"Utilities\ecommerce-xpaths.json");
             var config =
                  JsonSerializer.Deserialize<List<EcommerceJsonConfiguration>>(jsonString);
             services.AddSingleton(config);

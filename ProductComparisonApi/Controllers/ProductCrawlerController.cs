@@ -29,6 +29,10 @@ namespace ProductComparisonApi.Controllers
                 return NotFound(new { message="Base Host not found"});
             }
             var product = _urlCrawler.Crawl(config, url.url);
+            if (product is null || product.Title is null || product.Description is null)
+            {
+                return NotFound(new { message="Product not found"});
+            }
             return Ok(product);
         }
 
