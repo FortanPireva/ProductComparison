@@ -13,6 +13,7 @@
   <ItemGroup>
     <Folder Include="csvs-web" />
     <Folder Include="productcsvs" />
+    <Folder Include="productsjson" />
   </ItemGroup>
 
   <ItemGroup>

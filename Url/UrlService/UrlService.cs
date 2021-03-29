@@ -7,6 +7,8 @@ using CsvHelper;
 using URL.Mappers;
 using CsvHelper.Configuration;
 using System.Globalization;
+using System.Text.Json;
+using Domain.Entity;
 
 namespace URL.UrlService
 {
@@ -60,6 +62,17 @@ namespace URL.UrlService
                 
                 Console.WriteLine("Writed to file "+path);
 
+            }
+        }
+
+        public void WriteJsonFile(string path, List<Product> products)
+        {
+            using (StreamWriter writer=File.CreateText(path))
+            {
+                var json = JsonSerializer.Serialize(products);
+                
+                writer.Write(json);
+                Console.WriteLine("Wrote to file..."+path);
             }
         }
     }

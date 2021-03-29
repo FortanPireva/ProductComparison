@@ -16,7 +16,50 @@ namespace URL
     {
         static void Main(string[] args)
         {
-           ProductsToCSV();
+           // ProductsToCSV();
+           ProductsToJson();
+        }
+        
+
+        static void ProductsToJson()
+        {
+            Console.WriteLine("Start CSV File Reading...");
+            var _urlService = new UrlService.UrlService();
+            string path = @"..\..\..\csvs\";
+            string productsPath = @"..\..\..\productsjson\";
+
+            string[] csvFiles = Directory.GetFiles(path);
+            var web = new HtmlWeb();
+            ApiCaller caller = new ApiCaller("http://localhost:5000/productcrawler");
+            ;
+            foreach (var csvFile in csvFiles)
+            {
+                string fileName = Path.GetFileNameWithoutExtension(csvFile);
+                var resultData = _urlService.ReadCSVFile<Url, UrlMap>(csvFile);
+                // var listProducts = _urlService.ReadCSVFile<Product, ProductMap>(productsPath + fileName);
+                // if (listProducts.Count > 0)
+                // {
+                //     continue;
+                // }
+
+                if (resultData.Count == 0)
+                {
+                    continue;
+                }
+
+                List<Product> products = new List<Product>();
+                foreach (var link in resultData)
+                {
+                    Product product = caller.Request(link.href).Result;
+                    if (product != null)
+                    {
+                        products.Add(product);
+                        Console.WriteLine("Adding " + product.Title);
+                    }
+                }
+
+                _urlService.WriteJsonFile(productsPath + fileName+".json", products);
+            }
         }
 
         static void ProductsToCSV()
